@@ -19,11 +19,11 @@ metadata:
     github.com/project-slug: DrConsulta/api
 spec:
   type: openai
-  lifecycle: production
-  owner: user:0GiS0
-  system: tour-of-heroes
-  dependsOn: ['resource:heroes-db']
-  apiConsumedBy: ['component:www-heroes']
+  lifecycle: development
+  owner: user:VladimirRiber136
+  system: develop-drc-tech
+  dependsOn: ['resource:mysql-db']
+  apiConsumedBy: ['component:www-drc']
   definition: |
     openapi: 3.0.1
     info:
