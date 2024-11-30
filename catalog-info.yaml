@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: drc-api
-  description: DRC Tech API is a RESTful API that provides manages heroes.
+  description: DRC Tech API is a RESTfull API that provides manages Development.
   tags:
     - dotnet
     - data
@@ -27,7 +27,7 @@ spec:
   definition: |
     openapi: 3.0.1
     info:
-      title: tour_of_heroes_api
+      title: drc_api
       version: v1
     paths:
       /api/Health:
@@ -62,7 +62,7 @@ spec:
                       $ref: '#/components/schemas/drc.tech'
         post:
           tags:
-            - Hero
+            - Development
           requestBody:
             content:
               application/json:
@@ -90,7 +90,7 @@ spec:
       /api/Hero/{id}:
         get:
           tags:
-            - Hero
+            - Development
           parameters:
             - name: id
               in: path
@@ -113,7 +113,7 @@ spec:
                     $ref: '#/components/schemas/drc.tech'
         put:
           tags:
-            - Hero
+            - Development
           parameters:
             - name: id
               in: path
@@ -137,7 +137,7 @@ spec:
               description: Success
         delete:
           tags:
-            - Hero
+            - Development
           parameters:
             - name: id
               in: path
@@ -150,7 +150,7 @@ spec:
               description: Success
     components:
       schemas:
-        Hero:
+        Development:
           required:
             - alterEgo
             - name
