@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: drc-tech-ecosistema-app
-  description: Backstage controla a ordem na infraestrutura e permite as equipes de desenvolvimento enviem códigos de alta qualidade rapidamente, sem comprometer a autonomia.
+  description: Backstage controla a ordem na infraestrutura e permite as equipes de desenvolvimento enviem c�digos de alta qualidade rapidamente, sem comprometer a autonomia.
   links:
     - title: Website
       url: http://backstage.io
@@ -19,5 +19,152 @@ metadata:
 spec:
   type: library
   owner: CNCF
-  lifecycle: experimental
+  lifecycle: development
   system: drc-desenvolvedores
+    dependsOn: ['resource:mysql-db']
+    apiConsumedBy: ['component:www-drc']
+    definition: |
+      openapi: 3.0.1
+      info:
+        title: drc_api
+        version: v1
+      paths:
+        /api/Health:
+          get:
+            tags:
+              - Health
+            responses:
+              '200':
+                description: Success
+        /api/S2:
+          get:
+            tags:
+              - S2
+            responses:
+              '200':
+                description: Success
+                content:
+                  text/plain:
+                    schema:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/drc.tech'
+                  application/json:
+                    schema:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/drc.tech'
+                  text/json:
+                    schema:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/drc.tech'
+          post:
+            tags:
+              - desenvolvedores
+            requestBody:
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+                text/json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+                application/*+json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+            responses:
+              '200':
+                description: Success
+                content:
+                  text/plain:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+                  text/json:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+        /api/Hero/{id}:
+          get:
+            tags:
+              - Desenvolvedores
+            parameters:
+              - name: id
+                in: path
+                required: true
+                schema:
+                  type: integer
+                  format: int32
+            responses:
+              '200':
+                description: Success
+                content:
+                  text/plain:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+                  text/json:
+                    schema:
+                      $ref: '#/components/schemas/drc.tech'
+          put:
+            tags:
+              - Desenvolvedores
+            parameters:
+              - name: id
+                in: path
+                required: true
+                schema:
+                  type: integer
+                  format: int32
+            requestBody:
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+                text/json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+                application/*+json:
+                  schema:
+                    $ref: '#/components/schemas/drc.tech'
+            responses:
+              '200':
+                description: Success
+          delete:
+            tags:
+              - S2
+            parameters:
+              - name: id
+                in: path
+                required: true
+                schema:
+                  type: integer
+                  format: int32
+            responses:
+              '200':
+                description: Success
+      components:
+        schemas:
+          Hero:
+            required:
+              - alterEgo
+              - name
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int32
+              name:
+                minLength: 1
+                type: string
+              alterEgo:
+                minLength: 1
+                type: string
+              description:
+                type: string
+                nullable: true
+            additionalProperties: false
