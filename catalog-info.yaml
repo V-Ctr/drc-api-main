@@ -21,19 +21,4 @@ spec:
   owner: CNCF
   lifecycle: development
   system: drc-desenvolvedores
-    dependsOn: ['resource:mysql-db']
-    apiConsumedBy: ['component:www-drc']
-    definition: |
-      openapi: 3.0.1
-      info:
-        title: drc_api
-        version: v1
-      paths:
-        /api/Health:
-          get:
-            tags:
-              - Health
-            responses:
-              '200':
-                description: Success
-      
+ 
