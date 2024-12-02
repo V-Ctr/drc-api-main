@@ -1,13 +1,23 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: DRC Tech 
-  description: DRC Tech Ecosistema App
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  name: drc-tech-ecosistema-app
+  description: Backstage controla a ordem na infraestrutura e permite as equipes de desenvolvimento enviem códigos de alta qualidade rapidamente, sem comprometer a autonomia.
+  links:
+    - title: Website
+      url: http://backstage.io
+    - title: Documentation
+      url: https://backstage.io/docs
+    - title: Storybook
+      url: https://backstage.io/storybook
+    - title: Discord Chat
+      url: https://discord.com/invite/EBHEGzX
+  annotations:
+    github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: dir:.
+    lighthouse.com/website-url: https://backstage.io
 spec:
-  type: website
-  owner: vladimir.abreu@drconsulta.com
-  lifecycle: development
+  type: library
+  owner: CNCF
+  lifecycle: experimental
+  system: drc-desenvolvedores
