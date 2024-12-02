@@ -19,6 +19,5 @@ metadata:
 spec:
   type: library
   owner: CNCF
-  lifecycle: development
+  lifecycle: experimental
   system: drc-desenvolvedores
- 
