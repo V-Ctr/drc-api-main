@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: drc-tech-ecosistema-app
-  description: Backstage controla a ordem na infraestrutura e permite as equipes de desenvolvimento enviem c�digos de alta qualidade rapidamente, sem comprometer a autonomia.
+  description: Backstage controla a ordem na infraestrutura e permite as equipes de desenvolvimento enviem códigos de alta qualidade rapidamente, sem comprometer a autonomia.
   links:
     - title: Website
       url: http://backstage.io
